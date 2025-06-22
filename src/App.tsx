@@ -1,15 +1,14 @@
 import './App.css'
+import Desktop from './components/Desktop/Desktop'
 import MainToolbar from './components/MainToolbar'
 
 function App() {
 
   return (
-   <main className='w-screen flex flex-col justify-between h-screen bg-teal-800'>
-    <div>
-      Desktop
-    </div>
-    <MainToolbar/>
-   </main>
+    <main className='w-screen flex flex-col justify-between h-screen bg-teal-800'>
+      <Desktop />
+      <MainToolbar />
+    </main>
   )
 }
 
