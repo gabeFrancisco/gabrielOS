@@ -1,2 +1,10 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: "W95FA";
+    src: url('../public/W95FA.otf');
+}
+
+*{
+    font-family: "W95FA";
+}
