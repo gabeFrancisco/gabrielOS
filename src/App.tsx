@@ -5,7 +5,7 @@ import MainToolbar from './components/MainToolbar/MainToolbar'
 import Warning from './components/Warning';
 
 function App() {
-  const [menu, setMenu] = useState(true);
+  const [menu, setMenu] = useState(false);
   const handleMenu = () => {
     setMenu(!menu)
     console.log(menu)
