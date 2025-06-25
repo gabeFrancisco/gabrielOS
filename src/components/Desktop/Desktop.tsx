@@ -8,10 +8,13 @@ interface Props {
 
 function Desktop(props: Props) {
   return (
-    <div className="grid grid-cols-12 align-baseline py-3">
-      {desktopData.map((el, key) => (
-        <Icon icon={el.icon} label={el.label} key={key} />
-      ))}
+    <div className="flex flex-col flex-wrap w-full items-start">
+      <div className="p-3">
+        {desktopData.map((el, key) => (
+          <Icon icon={el.icon} label={el.label} key={key} />
+        ))}
+
+      </div>
       {props.menu && <MenuBar />}
     </div>);
 }
