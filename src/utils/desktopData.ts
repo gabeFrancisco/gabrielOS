@@ -1,7 +1,8 @@
 import Resume from '../../public/icons/resume.ico'
 import Folder from '../../public/icons/folder.ico'
 import Internet from '../../public/icons/internet.ico'
-import Terminal from '../../public/icons/terminal.ico'
+import Console from '../../public/icons/console.ico'
+import Game from '../../public/icons/game.ico'
 
 export const desktopData = [
   {
@@ -17,7 +18,11 @@ export const desktopData = [
     label: "Web"
   },
   {
-    icon: Terminal,
+    icon: Console,
     label: "Terminal"
+  },
+  {
+    icon: Game,
+    label: "S. Invaders"
   },
 ]
