@@ -1,4 +1,5 @@
 import Computer from "../../../public/icons/desktop.ico"
+import WatchBar from "./WatchBar";
 
 interface Props{
   handleMenuBar: () => void
@@ -13,6 +14,10 @@ function MainToolbar(props: Props) {
         <img src={Computer} alt="Menu Icon" className="w-5" />
         <span className="ml-1">Start</span>
       </div>
+      <div>
+        Program
+      </div>
+      <WatchBar/>
     </div>);
 }
 
