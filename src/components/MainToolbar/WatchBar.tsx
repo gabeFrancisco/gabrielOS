@@ -19,7 +19,7 @@ function WatchBar() {
   };
   return (<div style={{
     border: "2px #bbb inset"
-  }} className="px-3 bg-gray-300 flex flex-row items-center justify-center">
+  }} className="w-18 text-lg bg-gray-300 flex flex-row items-center justify-center">
     {formatTime(time)}
   </div>);
 }

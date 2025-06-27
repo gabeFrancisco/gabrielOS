@@ -1,7 +1,8 @@
 import Computer from "../../../public/icons/desktop.ico"
+import IconBar from "./IconBar";
 import WatchBar from "./WatchBar";
 
-interface Props{
+interface Props {
   handleMenuBar: () => void
 }
 
@@ -17,7 +18,10 @@ function MainToolbar(props: Props) {
       <div>
         Program
       </div>
-      <WatchBar/>
+      <div className="flex flex-row">
+        <IconBar />
+        <WatchBar />
+      </div>
     </div>);
 }
 
