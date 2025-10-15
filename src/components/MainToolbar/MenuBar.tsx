@@ -1,9 +1,13 @@
 import { desktopData } from "../../utils/desktopData";
 import MenuItem from "./MenuItem";
 
-function MenuBar() {
+interface Props {
+  ref: React.RefObject<HTMLDivElement | null>
+}
+
+function MenuBar(props: Props) {
   return (
-    <div style={{
+    <div ref={props.ref} style={{
       border: "2px #bbb outset"
     }} className="absolute bottom-10 w-1/4 bg-gray-300 flex flex-row">
       <div style={{

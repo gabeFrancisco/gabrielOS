@@ -1,4 +1,5 @@
 import { desktopData } from "../../utils/desktopData";
+import Window from "../Windows/Window";
 // import MenuBar from "../MainToolbar/MenuBar";
 import Icon from "./Icon";
 
@@ -16,6 +17,7 @@ function Desktop() {
 
       </div>
       {/* {props.menu && <MenuBar />} */}
+      <Window/>
     </div>);
 }
 
