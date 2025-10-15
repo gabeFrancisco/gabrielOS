@@ -12,7 +12,7 @@ import MenuBar from "./MenuBar";
 function MainToolbar() {
   const [menu, setMenu] = useState(false);
   const ref = useOutsideClick(setMenu);
-  const handleMenu = () => menu ? setMenu(false) : setMenu(true);
+  const handleMenu = () => setMenu(menu => !menu)
 
   return (
     <>
@@ -21,7 +21,7 @@ function MainToolbar() {
 
       </div>
       <div className="z-10 w-screen flex py-0.5 px-1 flex-row justify-between border-t-3 border-neutral-200 bg-neutral-300 h-10">
-        <div onClick={() => handleMenu()} className="p-1 cursor-pointer hover:bg-blue-800 hover:text-white flex flex-row" style={{
+        <div onClick={handleMenu} className="p-1 cursor-pointer hover:bg-blue-800 hover:text-white flex flex-row" style={{
           border: '2px #bbb outset'
         }}>
           <img src={Computer} alt="Menu Icon" className="w-5" />

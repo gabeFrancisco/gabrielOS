@@ -4,7 +4,7 @@ interface Props{
 
 function MenuItem(props: Props) {
   return (
-    <div className="hover:bg-blue-800 cursor-pointer w-full hover:text-white">
+    <div className="hover:bg-blue-800 p-2 cursor-pointer w-full hover:text-white">
       {props.label}
     </div>
   );
