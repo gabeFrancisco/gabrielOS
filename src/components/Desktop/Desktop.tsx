@@ -1,12 +1,12 @@
 import { desktopData } from "../../utils/desktopData";
-import MenuBar from "../MainToolbar/MenuBar";
+// import MenuBar from "../MainToolbar/MenuBar";
 import Icon from "./Icon";
 
-interface Props {
-  menu: boolean
-}
+// interface Props {
+//   menu: boolean
+// }
 
-function Desktop(props: Props) {
+function Desktop() {
   return (
     <div className="flex flex-col flex-wrap w-full items-start">
       <div className="p-3">
@@ -15,7 +15,7 @@ function Desktop(props: Props) {
         ))}
 
       </div>
-      {props.menu && <MenuBar />}
+      {/* {props.menu && <MenuBar />} */}
     </div>);
 }
 
