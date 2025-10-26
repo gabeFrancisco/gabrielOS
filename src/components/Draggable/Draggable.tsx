@@ -9,8 +9,8 @@ function Draggable({children} : {children: React.ReactNode}) {
     transform: CSS.Translate.toString(transform),
   };
 
-  return (<div>
-    <button ref={setNodeRef} style={style} {...listeners} {...attributes}>
+  return (<div className="w-3/4">
+    <button ref={setNodeRef} className="w-3/4" style={style} {...listeners} {...attributes}>
       { children}
     </button>
   </div>);

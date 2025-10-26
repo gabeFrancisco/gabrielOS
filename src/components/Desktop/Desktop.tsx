@@ -10,8 +10,7 @@ import Icon from "./Icon";
 
 function Desktop() {
   return (
-    <DndContext>
-
+    <DndContext autoScroll={false} >
       <div className="flex flex-col flex-wrap w-full items-start">
         <div className="p-3">
           {desktopData.map((el, key) => (
