@@ -1,4 +1,4 @@
-import { DndContext } from "@dnd-kit/core";
+import { DndContext, useDroppable } from "@dnd-kit/core";
 import { desktopData } from "../../utils/desktopData";
 import Window from "../Windows/Window";
 // import MenuBar from "../MainToolbar/MenuBar";
@@ -9,9 +9,12 @@ import Icon from "./Icon";
 // }
 
 function Desktop() {
+  const {  setNodeRef } = useDroppable({
+    id: "drop-area"
+  })
   return (
     <DndContext autoScroll={false} >
-      <div className="flex flex-col flex-wrap w-full items-start">
+      <div ref={setNodeRef} className="flex flex-col flex-wrap w-full items-start">
         <div className="p-3">
           {desktopData.map((el, key) => (
             <Icon icon={el.icon} label={el.label} key={key} />
@@ -19,7 +22,7 @@ function Desktop() {
 
         </div>
         {/* {props.menu && <MenuBar />} */}
-        <Window />
+        {/* <Window>fsdfdsf</Window> */}
       </div>
     </DndContext>);
 }
