@@ -47,13 +47,13 @@ function Window({ id, title, children, position }: WindowProps) {
         <div className="border-gray-200 flex flex-row justify-between font-bold bg-blue-900 text-white w-full pl-1 pr-0.5 text-sm py-0.5">
           {title}
           <div className="flex flex-row">
-            <div style={{ border: 'outset 1px' }} className="bg-gray-200 text-black px-1 cursor-pointer">
+            <div style={{ border: 'outset 1px' }} className="bg-gray-200 text-black hover:bg-gray-400 px-1 cursor-pointer">
               _
             </div>
-            <div style={{ border: 'outset 1px' }} className="bg-gray-200 text-black px-1 ml-0.5 cursor-pointer font-bold">
+            <div style={{ border: 'outset 1px' }} className="bg-gray-200 text-black hover:bg-gray-400 px-1 ml-0.5 cursor-pointer font-bold">
               ◻
             </div>
-            <div style={{ border: 'outset 1px' }} className="bg-gray-200 text-black px-1 ml-0.5 cursor-pointer">
+            <div style={{ border: 'outset 1px' }} className="bg-gray-200 text-black hover:bg-gray-400 px-1 ml-0.5 cursor-pointer">
               X
             </div>
           </div>
