@@ -5,6 +5,7 @@ import Window from "../Windows/Window";
 import Icon from "./Icon";
 import DroppableZone from "../Droppable/DroppableZone";
 import { useState } from "react";
+import { restrictToWindowEdges } from '@dnd-kit/modifiers';
 
 // interface Props {
 //   menu: boolean
@@ -31,7 +32,7 @@ function Desktop() {
     }));
   }
   return (
-    <DndContext autoScroll={false} onDragEnd={handleDragEnd}>
+    <DndContext autoScroll={false} onDragEnd={handleDragEnd} modifiers={[restrictToWindowEdges]}>
       <DroppableZone>
 
         <div className="p-3">
