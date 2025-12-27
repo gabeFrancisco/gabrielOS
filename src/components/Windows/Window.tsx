@@ -1,15 +1,57 @@
-import Draggable from "../Draggable/Draggable";
+import { useDraggable } from "@dnd-kit/core";
+import { CSS } from '@dnd-kit/utilities';
 
-function Window({children} : { children: React.ReactNode}) {
+interface WindowProps {
+  id: string;
+  title: string;
+  children: React.ReactNode;
+  position: { x: number; y: number };
+}
+
+function Window({ id, title, children, position }: WindowProps) {
+  const { attributes, listeners, setNodeRef, transform } = useDraggable({
+    id: id,
+  });
+
+  const style: React.CSSProperties = {
+    position: 'absolute',
+    left: position.x,
+    top: position.y,
+    // O transform do dnd-kit soma o movimento temporário enquanto você arrasta
+    transform: CSS.Translate.toString(transform),
+
+    // Estilos visuais do Win95
+    width: '300px',
+    backgroundColor: '#c0c0c0',
+    border: '2px solid white #808080 #808080 white',
+    boxShadow: '1px 1px 0 0 black',
+    zIndex: transform ? 1000 : 1, // Traz a janela para frente ao arrastar
+  };
   return (
-    <Draggable>
-      <div className="border border-gray-100 text-center bg-blue-900 text-white w-full px-2 py-0.5">
-        Windows
+    <div ref={setNodeRef} style={style}>
+      <div
+      className="flex flex-col"
+        {...listeners}
+        {...attributes}
+        style={{
+          color: 'white',
+          padding: '1px 1px',
+          cursor: 'default',
+          display: 'flex',
+          justifyContent: 'space-between',
+          fontWeight: 'bold',
+          userSelect: 'none'
+        }}
+      >
+
+        <div className="border-gray-200 text-center bg-blue-900 text-white w-full px-2 py-0.5">
+          {title}
+        </div>
+        <div className="h-full grow bg-gray-300 p-12">
+          {children}
+        </div>
       </div>
-      <div className="h-full grow bg-gray-100 p-12">
-        {children}
-      </div>
-    </Draggable>
+    </div>
   );
 }
 
