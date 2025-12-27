@@ -30,7 +30,7 @@ function Window({ id, title, children, position }: WindowProps) {
   return (
     <div ref={setNodeRef} style={style}>
       <div
-      className="flex flex-col"
+        className="flex flex-col"
         {...listeners}
         {...attributes}
         style={{
@@ -44,10 +44,21 @@ function Window({ id, title, children, position }: WindowProps) {
         }}
       >
 
-        <div className="border-gray-200 text-center bg-blue-900 text-white w-full px-2 py-0.5">
+        <div className="border-gray-200 flex flex-row justify-between font-bold bg-blue-900 text-white w-full pl-1 pr-0.5 text-sm py-0.5">
           {title}
+          <div className="flex flex-row">
+            <div style={{ border: 'outset 1px' }} className="bg-gray-200 text-black px-1 cursor-pointer">
+              _
+            </div>
+            <div style={{ border: 'outset 1px' }} className="bg-gray-200 text-black px-1 ml-0.5 cursor-pointer font-bold">
+              ◻
+            </div>
+            <div style={{ border: 'outset 1px' }} className="bg-gray-200 text-black px-1 ml-0.5 cursor-pointer">
+              X
+            </div>
+          </div>
         </div>
-        <div className="h-full grow bg-gray-300 p-12">
+        <div className="h-full grow bg-gray-300 text-gray-800 p-12">
           {children}
         </div>
       </div>

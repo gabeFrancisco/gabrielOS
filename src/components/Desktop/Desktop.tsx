@@ -41,7 +41,8 @@ function Desktop() {
 
         </div>
         {/* {props.menu && <MenuBar />} */}
-        <Window id="program" title="Some program" position={positions.program}>fsdfdsf</Window>
+        <Window id="program" title="Some program" position={positions.program}>Some program is running!</Window>
+        {/* <Window id="explorer" title="Explorer" position={positions.explorer}>Explorer de arquivos</Window> */}
       </DroppableZone>
     </DndContext>);
 }
