@@ -6,6 +6,7 @@ import Icon from "./Icon";
 import DroppableZone from "../Droppable/DroppableZone";
 import { useState } from "react";
 import { restrictToWindowEdges } from '@dnd-kit/modifiers';
+import ResumeProgram from "../Programs/ResumeProgram";
 
 // interface Props {
 //   menu: boolean
@@ -15,6 +16,7 @@ function Desktop() {
   // 1. O estado é apenas um objeto: { 'id-da-janela': { x, y } }
   const [positions, setPositions] = useState({
     program: { x: 50, y: 50 },
+    resume: {x: 50, y:60},
     explorer: { x: 150, y: 100 },
   });
 
@@ -37,12 +39,13 @@ function Desktop() {
 
         <div className="p-3">
           {desktopData.map((el, key) => (
-            <Icon icon={el.icon} label={el.label} key={key} />
+            <Icon doubleClick={() => alert("Double clicked!")} icon={el.icon} label={el.label} key={key} />
           ))}
 
         </div>
         {/* {props.menu && <MenuBar />} */}
         <Window id="program" title="Some program" position={positions.program}>Some program is running!</Window>
+        <ResumeProgram position={positions.resume}/>
         {/* <Window id="explorer" title="Explorer" position={positions.explorer}>Explorer de arquivos</Window> */}
       </DroppableZone>
     </DndContext>);
