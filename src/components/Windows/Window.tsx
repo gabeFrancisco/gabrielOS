@@ -34,6 +34,7 @@ function Window({ id, title, children, position }: WindowProps) {
         {...listeners}
         {...attributes}
         style={{
+          border: '2px outset #ccc',
           color: 'white',
           padding: '1px 1px',
           cursor: 'default',
