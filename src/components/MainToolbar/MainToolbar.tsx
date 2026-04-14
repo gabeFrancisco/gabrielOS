@@ -4,6 +4,8 @@ import IconBar from "./IconBar";
 import WatchBar from "./WatchBar";
 import useOutsideClick from "../../hooks/useOutsideClick";
 import MenuBar from "./MenuBar";
+import MainToolbarItem from "./MainToolbarItem";
+import { desktopData } from "../../utils/desktopData";
 
 // interface Props {
 //   handleMenuBar: () => void
@@ -18,14 +20,15 @@ function MainToolbar() {
     <>
       {menu && <MenuBar ref={ref} />}
       <div className="z-10 w-screen flex py-0.5 px-1 flex-row justify-between border-t-3 border-neutral-200 bg-neutral-300 h-10">
-        <div onClick={handleMenu} className="p-1 cursor-pointer hover:bg-blue-800 hover:text-white flex flex-row" style={{
-          border: '2px #bbb outset'
+        <div onClick={handleMenu} className="py-1 px-3 cursor-pointer hover:bg-blue-800 hover:text-white flex flex-row" style={{
+          border: '2px outset #ccc ',
+          boxShadow: '1px 1px 0 0 #333',
         }}>
           <img src={Computer} alt="Menu Icon" className="w-5" />
           <span className="ml-1">Start</span>
         </div>
-        <div>
-          Program
+        <div className="w-full flex flex-row items-center px-2">
+          <MainToolbarItem id="resume" icon={desktopData[0].icon} onClick={() => alert("Clicked! God bless you!")} title="Resume"/>
         </div>
         <div className="flex flex-row">
           <IconBar />

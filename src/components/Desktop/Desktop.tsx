@@ -15,8 +15,7 @@ import useSystemStore from "../../hooks/useSystemStore";
 
 function Desktop() {
   const store = useSystemStore();
-  useEffect(() => alert(store.bears),[])
-  // 1. O estado é apenas um objeto: { 'id-da-janela': { x, y } }
+    // 1. O estado é apenas um objeto: { 'id-da-janela': { x, y } }
   const [positions, setPositions] = useState({
     program: { x: 50, y: 50 },
     resume: {x: 50, y:60},

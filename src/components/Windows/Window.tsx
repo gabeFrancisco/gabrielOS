@@ -24,7 +24,7 @@ function Window({ id, title, children, position }: WindowProps) {
     width: '300px',
     backgroundColor: '#c0c0c0',
     border: '2px solid white #808080 #808080 white',
-    boxShadow: '1px 1px 0 0 black',
+    boxShadow: '1px 1px 0 0 #333',
     zIndex: transform ? 1000 : 1, // Traz a janela para frente ao arrastar
   };
   return (

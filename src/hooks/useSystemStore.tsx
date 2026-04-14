@@ -2,6 +2,7 @@ import { create } from 'zustand'
 
 interface SystemState{
   bears: number,
+
   increase: (by: number) => void
 }
 
