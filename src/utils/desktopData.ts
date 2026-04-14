@@ -7,22 +7,27 @@ import Game from '../../public/icons/game.ico'
 export const desktopData = [
   {
     icon: Resume,
-    label: "Resume"
+    label: "Resume",
+    id: "resume"
   },
   {
     icon: Folder,
-    label: "Somes files"
+    label: "Somes files",
+    id: "files"
   },
   {
     icon: Internet,
-    label: "Web"
+    label: "Web",
+    id: "web"
   },
   {
     icon: Console,
-    label: "Terminal"
+    label: "Terminal",
+    id: "terminal"
   },
   {
     icon: Game,
-    label: "S. Invaders"
+    label: "S. Invaders",
+    id: "invaders"
   },
 ]

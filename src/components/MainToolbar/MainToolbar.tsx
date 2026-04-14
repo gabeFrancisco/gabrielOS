@@ -5,7 +5,7 @@ import WatchBar from "./WatchBar";
 import useOutsideClick from "../../hooks/useOutsideClick";
 import MenuBar from "./MenuBar";
 import MainToolbarItem from "./MainToolbarItem";
-import { desktopData } from "../../utils/desktopData";
+import useSystemStore from "../../hooks/useSystemStore";
 
 // interface Props {
 //   handleMenuBar: () => void
@@ -15,6 +15,8 @@ function MainToolbar() {
   const [menu, setMenu] = useState(false);
   const ref = useOutsideClick(setMenu);
   const handleMenu = () => setMenu(menu => !menu)
+
+  const programs = useSystemStore().programs;
 
   return (
     <>
@@ -28,7 +30,11 @@ function MainToolbar() {
           <span className="ml-1">Start</span>
         </div>
         <div className="w-full flex flex-row items-center px-2">
-          <MainToolbarItem id="resume" icon={desktopData[0].icon} onClick={() => alert("Clicked! God bless you!")} title="Resume"/>
+          {programs
+            .filter(el => el.isOpen === true)
+            .map((el, key) => (
+            <MainToolbarItem key={key} id={el.id} icon={el.icon} onClick={() => alert("Clicked! God bless you!")} title={el.title}/>
+          ))}
         </div>
         <div className="flex flex-row">
           <IconBar />

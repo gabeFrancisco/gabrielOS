@@ -15,6 +15,14 @@ import useSystemStore from "../../hooks/useSystemStore";
 
 function Desktop() {
   const store = useSystemStore();
+  function handleIconDoubleClick(id: string){
+    store.setOpen(id, true);
+  }
+
+  useEffect(() => {
+    console.log(store.programs);
+  }, [store])
+
     // 1. O estado é apenas um objeto: { 'id-da-janela': { x, y } }
   const [positions, setPositions] = useState({
     program: { x: 50, y: 50 },
@@ -41,7 +49,7 @@ function Desktop() {
 
         <div className="p-3">
           {desktopData.map((el, key) => (
-            <Icon doubleClick={() => alert("Double clicked!")} icon={el.icon} label={el.label} key={key} />
+            <Icon doubleClick={() => handleIconDoubleClick(el.id)} icon={el.icon} label={el.label} key={key} />
           ))}
 
         </div>
