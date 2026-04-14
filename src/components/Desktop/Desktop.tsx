@@ -4,15 +4,18 @@ import Window from "../Windows/Window";
 // import MenuBar from "../MainToolbar/MenuBar";
 import Icon from "./Icon";
 import DroppableZone from "../Droppable/DroppableZone";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { restrictToWindowEdges } from '@dnd-kit/modifiers';
 import ResumeProgram from "../Programs/ResumeProgram";
+import useSystemStore from "../../hooks/useSystemStore";
 
 // interface Props {
 //   menu: boolean
 // }
 
 function Desktop() {
+  const store = useSystemStore();
+  useEffect(() => alert(store.bears),[])
   // 1. O estado é apenas um objeto: { 'id-da-janela': { x, y } }
   const [positions, setPositions] = useState({
     program: { x: 50, y: 50 },
