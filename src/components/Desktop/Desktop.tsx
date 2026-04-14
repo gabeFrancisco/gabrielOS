@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { restrictToWindowEdges } from '@dnd-kit/modifiers';
 import ResumeProgram from "../Programs/ResumeProgram";
 import useSystemStore from "../../hooks/useSystemStore";
+import AboutProgram from "../Programs/AboutProgram";
 
 // interface Props {
 //   menu: boolean
@@ -15,7 +16,7 @@ import useSystemStore from "../../hooks/useSystemStore";
 
 function Desktop() {
   const store = useSystemStore();
-  function handleIconDoubleClick(id: string){
+  function handleIconDoubleClick(id: string) {
     store.setOpen(id, true);
   }
 
@@ -23,11 +24,15 @@ function Desktop() {
     console.log(store.programs);
   }, [store])
 
-    // 1. O estado é apenas um objeto: { 'id-da-janela': { x, y } }
+  // 1. O estado é apenas um objeto: { 'id-da-janela': { x, y } }
   const [positions, setPositions] = useState({
     program: { x: 50, y: 50 },
-    resume: {x: 50, y:60},
-    explorer: { x: 150, y: 100 },
+    resume: { x: 50, y: 60 },
+    files: { x: 150, y: 100 },
+    web: { x: 150, y: 100 },
+    terminal: { x: 150, y: 100 },
+    invaders: { x: 150, y: 100 },
+    about: { x: 200, y: 200 }
   });
 
   function handleDragEnd(event: DragEndEvent) {
@@ -55,7 +60,8 @@ function Desktop() {
         </div>
         {/* {props.menu && <MenuBar />} */}
         <Window id="program" title="Some program" position={positions.program}>Some program is running!</Window>
-        <ResumeProgram position={positions.resume}/>
+        <ResumeProgram position={positions.resume} />
+        <AboutProgram position={positions.about} />
         {/* <Window id="explorer" title="Explorer" position={positions.explorer}>Explorer de arquivos</Window> */}
       </DroppableZone>
     </DndContext>);

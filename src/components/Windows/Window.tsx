@@ -21,7 +21,6 @@ function Window({ id, title, children, position }: WindowProps) {
     transform: CSS.Translate.toString(transform),
 
     // Estilos visuais do Win95
-    width: '300px',
     backgroundColor: '#c0c0c0',
     border: '2px solid white #808080 #808080 white',
     boxShadow: '1px 1px 0 0 #333',
@@ -59,7 +58,7 @@ function Window({ id, title, children, position }: WindowProps) {
             </div>
           </div>
         </div>
-        <div className="h-full grow bg-gray-300 text-gray-800 p-12">
+        <div className="h-full w-full grow bg-gray-300 text-gray-800 p-2">
           {children}
         </div>
       </div>

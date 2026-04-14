@@ -27,7 +27,7 @@ function MainToolbar() {
           boxShadow: '1px 1px 0 0 #333',
         }}>
           <img src={Computer} alt="Menu Icon" className="w-5" />
-          <span className="ml-1">Start</span>
+          <span className="ml-1 pr-5">Start</span>
         </div>
         <div className="w-full flex flex-row items-center px-2">
           {programs
