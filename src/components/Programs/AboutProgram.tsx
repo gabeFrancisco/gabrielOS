@@ -28,10 +28,11 @@ function AboutProgram(props: Props) {
                 <small>Thank you for using it!</small>
             </div>
             <hr className="my-2 border-neutral-400" />
-            <div className="w-full flex flex-col justify-center items-center my-3">
-                <img src={Pentium3} alt="Pentium-3" className="w-24" />
+            <div className="flex flex-row justify-center items-center my-3">
+                <img src={Pentium3} alt="Pentium-3" className="w-16 mr-5" />
+                <p>Intel Pentium III (Tualatin) - 1.4 GHz</p>
+
             </div>
-            <p>Processor: Intel Pentium III (Tualatin) - 1.4 GHz</p>
             <p>Actual clock: {frequency.toFixed(0)} MHz</p>
             <p>FSB speed: 133 MHz</p>
             <p>Cache: 512KM (L2)</p>
