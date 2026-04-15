@@ -1,4 +1,4 @@
-import { desktopData } from "../../utils/desktopData";
+import useSystemStore from "../../hooks/useSystemStore";
 import MenuItem from "./MenuItem";
 
 interface Props {
@@ -6,18 +6,19 @@ interface Props {
 }
 
 function MenuBar(props: Props) {
+  const programs = useSystemStore().programs;
   return (
     <div ref={props.ref} style={{
       border: "2px #bbb outset"
-    }} className="absolute bottom-10 w-1/4 bg-gray-300 flex flex-row">
+    }} className="absolute bottom-10 w-1/5 bg-gray-300 flex flex-row">
       <div style={{
         textOrientation: 'mixed',
         writingMode: "sideways-lr",
         textOverflow: "ellipsis"
       }} className="w-8 px-7 pl-1 bg-gradient-to-t from-blue-700 to-teal-800 text-white bg-blue-500">gabrielOS</div>
       <div className="flex flex-col w-full">
-        {desktopData.map((el, index) => (
-          <MenuItem key={index} label={el.label}/>
+        {programs.map((el, index) => (
+          <MenuItem key={index} label={el.title} />
         ))}
       </div>
     </div>

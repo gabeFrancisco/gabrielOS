@@ -1,39 +1,83 @@
 import { create } from 'zustand'
-import { desktopData } from '../utils/desktopData';
 
-interface Program{
+import Resume from '../../public/icons/resume.ico'
+import Folder from '../../public/icons/folder.ico'
+import Internet from '../../public/icons/internet.ico'
+import Console from '../../public/icons/console.ico'
+import Game from '../../public/icons/game.ico'
+import Computer from '../../public/icons/computer.ico'
+import ResumeProgram from '../components/Programs/ResumeProgram'
+import AboutProgram from '../components/Programs/AboutProgram'
+
+interface Program {
   id: string,
   icon: string,
   title: string,
   isOpen: boolean,
+  component: React.ComponentType<any>
 }
 
-interface SystemState{
+interface SystemState {
   programs: Array<Program>
   setOpen: (id: string, state: boolean) => void;
 }
 
-let programs: Array<Program> = [];
-
-desktopData.map(data => {
-  programs.push({
-    icon: data.icon,
+let programs: Array<Program> = [
+  {
+    icon: Resume,
+    title: "Resume",
     isOpen: false,
-    title: data.label,
-    id: data.id
-  })
-})
+    id: "resume",
+    component: ResumeProgram
+  },
+  {
+    icon: Folder,
+    title: "Somes files",
+    isOpen: false,
+    id: "files",
+    component: ResumeProgram
+  },
+  {
+    icon: Internet,
+    title: "Web",
+    id: "web",
+    isOpen: false,
+    component: ResumeProgram
+  },
+  {
+    icon: Console,
+    title: "Terminal",
+    isOpen: false,
+    id: "terminal",
+    component: ResumeProgram
+  },
+  {
+    icon: Game,
+    title: "S. Invaders",
+    isOpen: false,
+    id: "invaders",
+    component: ResumeProgram
+  },
+  {
+    icon: Computer,
+    title: "About computer",
+    isOpen: false,
+    id: "about",
+    component: AboutProgram
+  },
+];
+
 
 const useSystemStore = create<SystemState>()((set) => ({
-    programs,
-    setOpen: (id: string, programState: boolean) =>
-      set((state) => ({
-        programs: state.programs.map((program) =>
-          program.id === id
-            ? {...program, isOpen: programState}
-            : program
-        )
-      }))
+  programs,
+  setOpen: (id: string, programState: boolean) =>
+    set((state) => ({
+      programs: state.programs.map((program) =>
+        program.id === id
+          ? { ...program, isOpen: programState }
+          : program
+      )
+    }))
 }))
 
 export default useSystemStore;

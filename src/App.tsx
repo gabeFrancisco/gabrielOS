@@ -22,7 +22,7 @@ function App() {
   return (
     <main>
       {ami && <Ami />}
-      {loading && <LoadingScreen/>}
+      {loading && <LoadingScreen />}
       {!ami && !loading && (
         <div className='w-screen flex flex-col justify-between h-screen bg-blue-950'>
           <Desktop />
