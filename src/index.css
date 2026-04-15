@@ -5,6 +5,22 @@
     src: url('../public/W95FA.otf');
 }
 
-*{
+* {
     font-family: "W95FA";
+}
+
+.btn {
+    border: 2px outset #ccc;
+    background-color: #c0c0c0;
+    color: #222;
+    padding: 2px 1rem;
+    box-shadow: 1px 1px 0 0 #555;
+    cursor: default;
+    font-weight: bold;
+    user-select: none;
+}
+
+.btn:hover {
+    background-color: #ababab;
+    cursor: pointer;
 }
