@@ -62,7 +62,7 @@ function Window({ id, title, children, position, onClose }: WindowProps) {
             </div>
           </div>
         </div>
-        <div className="flex-1 min-h-0 overflow-y-auto bg-gray-300 text-gray-800 p-2">
+        <div className="flex-1 min-h-0 overflow-y-auto bg-gray-300 text-gray-800 p-1">
           {children}
         </div>
       </div>

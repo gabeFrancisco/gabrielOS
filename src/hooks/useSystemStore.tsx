@@ -10,7 +10,7 @@ import ResumeProgram from '../components/Programs/ResumeProgram'
 import AboutProgram from '../components/Programs/AboutProgram'
 import FilesProgram from '../components/Programs/FilesProgram'
 import InternetProgram from '../components/Programs/InternetProgram'
-import ConsoleProgram from '../components/Programs/ConsoleProgram'
+import ConsoleProgram from '../components/Programs/TerminalProgram'
 import GameProgram from '../components/Programs/GameProgram'
 
 // interface Window {

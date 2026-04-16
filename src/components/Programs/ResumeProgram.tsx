@@ -13,7 +13,7 @@ function ResumeProgram(props: Props) {
             boxShadow: '1px 1px 0 0 #333',
         }} className="overflow-y-scroll bg-white h-96 rounded p-3">
             <div>
-                <p><b>=== GABRIEL DA SILVA FRANCISCO ===<br /></b>Analista de Suporte<br />Telefone: (51) 99867-3148 |
+                <p className="text-xl text-center"><b >=== GABRIEL DA SILVA FRANCISCO ===<br /></b>Desenvolvedor Backend<br />Telefone: (51) 99867-3148 |
                     Email: brielsfrancisco@gmail.com<br /></p>
                 <p>============================================================<br />OBJETIVO<br />------------------------------------------------------------<br />Atuar
                     como desenvolvedor full stack utilizando C#, PHP e<br />JavaScript, contribuindo com a equipe e

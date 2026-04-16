@@ -24,7 +24,7 @@ function App() {
       {ami && <Ami />}
       {loading && <LoadingScreen />}
       {!ami && !loading && (
-        <div className='flex flex-col h-screen justify-between overflow-hidden bg-blue-950'>
+        <div className='flex flex-col h-screen justify-between overflow-hidden bg-blue-900'>
           <Desktop />
           {/* <Warning/> */}
           <MainToolbar />
