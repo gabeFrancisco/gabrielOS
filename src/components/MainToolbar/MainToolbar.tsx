@@ -21,7 +21,7 @@ function MainToolbar() {
   return (
     <>
       {menu && <MenuBar ref={ref} />}
-      <div className="z-10 w-screen flex py-0.5 px-1 flex-row justify-between border-t-3 border-neutral-200 bg-neutral-300 h-10">
+      <div className="z-10 absolute bottom-0 w-full shrink-0 flex py-0.5 px-1 flex-row justify-between border-t-3 border-neutral-200 bg-neutral-300 h-10">
         <div onClick={handleMenu} className="py-1 px-3 cursor-pointer hover:bg-blue-800 hover:text-white flex flex-row" style={{
           border: '2px outset #ccc ',
           boxShadow: '1px 1px 0 0 #333',
@@ -33,8 +33,8 @@ function MainToolbar() {
           {programs
             .filter(el => el.isOpen === true)
             .map((el, key) => (
-            <MainToolbarItem key={key} id={el.id} icon={el.icon} onClick={() => alert("Clicked! God bless you!")} title={el.title}/>
-          ))}
+              <MainToolbarItem key={key} id={el.id} icon={el.icon} onClick={() => alert("Clicked! God bless you!")} title={el.title} />
+            ))}
         </div>
         <div className="flex flex-row">
           <IconBar />

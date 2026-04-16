@@ -8,6 +8,14 @@ import Game from '../../public/icons/game.ico'
 import Computer from '../../public/icons/computer.ico'
 import ResumeProgram from '../components/Programs/ResumeProgram'
 import AboutProgram from '../components/Programs/AboutProgram'
+import FilesProgram from '../components/Programs/FilesProgram'
+import InternetProgram from '../components/Programs/InternetProgram'
+import ConsoleProgram from '../components/Programs/ConsoleProgram'
+import GameProgram from '../components/Programs/GameProgram'
+
+interface Window {
+
+}
 
 interface Program {
   id: string,
@@ -16,6 +24,8 @@ interface Program {
   isOpen: boolean,
   component: React.ComponentType<any>
 }
+
+
 
 interface SystemState {
   programs: Array<Program>
@@ -35,28 +45,28 @@ let programs: Array<Program> = [
     title: "Somes files",
     isOpen: false,
     id: "files",
-    component: ResumeProgram
+    component: FilesProgram
   },
   {
     icon: Internet,
     title: "Web",
     id: "web",
     isOpen: false,
-    component: ResumeProgram
+    component: InternetProgram
   },
   {
     icon: Console,
     title: "Terminal",
     isOpen: false,
     id: "terminal",
-    component: ResumeProgram
+    component: ConsoleProgram
   },
   {
     icon: Game,
     title: "S. Invaders",
     isOpen: false,
     id: "invaders",
-    component: ResumeProgram
+    component: GameProgram
   },
   {
     icon: Computer,

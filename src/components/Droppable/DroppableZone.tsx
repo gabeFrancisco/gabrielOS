@@ -7,7 +7,7 @@ function DroppableZone({ children }: { children: React.ReactNode }) {
 
   return (
     <div ref={setNodeRef}>
-      <div className="flex text-white flex-col flex-wrap w-full items-start">
+      <div className="relative flex flex-col items-start w-full h-full">
         {children}
       </div>
     </div>

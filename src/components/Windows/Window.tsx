@@ -6,9 +6,10 @@ interface WindowProps {
   title: string;
   children: React.ReactNode;
   position: { x: number; y: number };
+  onClose: () => void,
 }
 
-function Window({ id, title, children, position }: WindowProps) {
+function Window({ id, title, children, position, onClose }: WindowProps) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id: id,
   });
@@ -17,21 +18,24 @@ function Window({ id, title, children, position }: WindowProps) {
     position: 'absolute',
     left: position.x,
     top: position.y,
-    // O transform do dnd-kit soma o movimento temporário enquanto você arrasta
     transform: CSS.Translate.toString(transform),
-
-    // Estilos visuais do Win95
     backgroundColor: '#c0c0c0',
     border: '2px solid white #808080 #808080 white',
     boxShadow: '1px 1px 0 0 #333',
-    zIndex: transform ? 1000 : 1, // Traz a janela para frente ao arrastar
+    zIndex: transform ? 1000 : 1,
+
+    // ✅ Define um tamanho máximo para a janela não vazar
+    maxWidth: '600px',
+    maxHeight: '90vh',
+    display: 'flex',
+    flexDirection: 'column',
   };
   return (
     <div ref={setNodeRef} style={style}>
       <div
-        className="flex flex-col"
         {...listeners}
         {...attributes}
+        className="flex flex-col"
         style={{
           border: '2px outset #ccc',
           color: 'white',
@@ -44,21 +48,21 @@ function Window({ id, title, children, position }: WindowProps) {
         }}
       >
 
-        <div className="border-gray-200 flex flex-row justify-between font-bold bg-blue-900 text-white w-full pl-1 pr-0.5 text-sm py-0.5">
+        <div className="border-gray-200 h-full w-full flex flex-row justify-between font-bold bg-blue-900 text-white pl-1 pr-0.5 text-sm py-0.5">
           {title}
           <div className="flex flex-row">
-            <div style={{ border: 'outset 1px' }} className="bg-gray-200 text-black hover:bg-gray-400 px-1 cursor-pointer">
+            <div style={{ border: 'outset 1px' }} className="bg-gray-200 text-black hover:bg-gray-400 px-1 cursor-poi nter">
               _
             </div>
             <div style={{ border: 'outset 1px' }} className="bg-gray-200 text-black hover:bg-gray-400 px-1 ml-0.5 cursor-pointer font-bold">
               ◻
             </div>
-            <div style={{ border: 'outset 1px' }} className="bg-gray-200 text-black hover:bg-gray-400 px-1 ml-0.5 cursor-pointer">
+            <div style={{ border: 'outset 1px' }} onPointerDown={(e) => e.stopPropagation()} onClick={onClose} className="bg-gray-200 text-black hover:bg-gray-400 px-1 ml-0.5 cursor-pointer">
               X
             </div>
           </div>
         </div>
-        <div className="h-full w-full grow bg-gray-300 text-gray-800 p-2">
+        <div className="flex-1 min-h-0 overflow-y-auto bg-gray-300 text-gray-800 p-2">
           {children}
         </div>
       </div>

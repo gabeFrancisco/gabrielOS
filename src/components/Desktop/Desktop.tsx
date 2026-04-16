@@ -1,13 +1,10 @@
 import { DndContext, type DragEndEvent } from "@dnd-kit/core";
-import Window from "../Windows/Window";
 // import MenuBar from "../MainToolbar/MenuBar";
 import Icon from "./Icon";
 import DroppableZone from "../Droppable/DroppableZone";
 import { useEffect, useState } from "react";
 import { restrictToWindowEdges } from '@dnd-kit/modifiers';
-import ResumeProgram from "../Programs/ResumeProgram";
 import useSystemStore from "../../hooks/useSystemStore";
-import AboutProgram from "../Programs/AboutProgram";
 
 // interface Props {
 //   menu: boolean
@@ -18,10 +15,6 @@ function Desktop() {
   function handleIconDoubleClick(id: string) {
     store.setOpen(id, true);
   }
-
-  useEffect(() => {
-    console.log(store.programs);
-  }, [store])
 
   // 1. O estado é apenas um objeto: { 'id-da-janela': { x, y } }
   const [positions, setPositions] = useState([
@@ -53,30 +46,34 @@ function Desktop() {
     );
   }
   return (
+
     <DndContext autoScroll={false} onDragEnd={handleDragEnd} modifiers={[restrictToWindowEdges]}>
-      <DroppableZone>
+      <div className="flex-1 min-h-0 overflow-hidden w-full">
+        <DroppableZone>
 
-        <div className="p-3">
-          {store.programs.map((el, key) => (
-            <Icon doubleClick={() => handleIconDoubleClick(el.id)} icon={el.icon} label={el.title} key={key} />
-          ))}
+          <div className="p-3">
+            {store.programs.map((el, key) => (
+              <Icon doubleClick={() => handleIconDoubleClick(el.id)} icon={el.icon} label={el.title} key={key} />
+            ))}
 
-        </div>
-        {/* <>
+          </div>
+          {/* <>
 
-        <Window id="program" title="Some program" position={positions.program}>Some program is running!</Window>
-        <AboutProgram position={positions.about} />
+<Window id="program" title="Some program" position={positions.program}>Some program is running!</Window>
+<AboutProgram position={positions.about} />
           </> */}
 
-        {store.programs.filter(i => i.isOpen).map((item) => {
-          const Component = item.component;
-          const currentPos = positions.find((p) => p.id === item.id) || { x: 0, y: 0 };
-          return (
-            <Component id={item.id} position={currentPos} />
-          )
-        })}
-      </DroppableZone>
+          {store.programs.filter(i => i.isOpen).map((item, key) => {
+            const Component = item.component;
+            const currentPos = positions.find((p) => p.id === item.id) || { x: 0, y: 0 };
+            return (
+              <Component key={key} id={item.id} position={currentPos} />
+            )
+          })}
+        </DroppableZone>
+      </div>
     </DndContext>);
+
 }
 
 export default Desktop;
