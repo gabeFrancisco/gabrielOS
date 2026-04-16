@@ -2,7 +2,7 @@ import { DndContext, type DragEndEvent } from "@dnd-kit/core";
 // import MenuBar from "../MainToolbar/MenuBar";
 import Icon from "./Icon";
 import DroppableZone from "../Droppable/DroppableZone";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { restrictToWindowEdges } from '@dnd-kit/modifiers';
 import useSystemStore from "../../hooks/useSystemStore";
 

@@ -13,9 +13,9 @@ import InternetProgram from '../components/Programs/InternetProgram'
 import ConsoleProgram from '../components/Programs/ConsoleProgram'
 import GameProgram from '../components/Programs/GameProgram'
 
-interface Window {
+// interface Window {
 
-}
+// }
 
 interface Program {
   id: string,
