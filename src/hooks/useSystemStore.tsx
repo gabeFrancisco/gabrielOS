@@ -10,8 +10,8 @@ import ResumeProgram from '../components/Programs/ResumeProgram'
 import AboutProgram from '../components/Programs/AboutProgram'
 import FilesProgram from '../components/Programs/FilesProgram'
 import InternetProgram from '../components/Programs/InternetProgram'
-import ConsoleProgram from '../components/Programs/TerminalProgram'
 import GameProgram from '../components/Programs/GameProgram'
+import TerminalProgram from '../components/Programs/TerminalProgram'
 
 // interface Window {
 
@@ -59,7 +59,7 @@ let programs: Array<Program> = [
     title: "Terminal",
     isOpen: false,
     id: "terminal",
-    component: ConsoleProgram
+    component: TerminalProgram
   },
   {
     icon: Game,
@@ -71,7 +71,7 @@ let programs: Array<Program> = [
   {
     icon: Computer,
     title: "About computer",
-    isOpen: false,
+    isOpen: true,
     id: "about",
     component: AboutProgram
   },

@@ -7,9 +7,10 @@ interface Props {
 
 function TerminalProgram(props: Props) {
     const store = useSystemStore();
-    return (<Window id="console" onClose={() => store.setOpen('terminal', false)} position={props.position} title="Console">
-        <div className="bg-neutral-950 p-5 w-screen h-96"></div>
-    </Window>);
+    return (
+        <Window id="terminal" onClose={() => store.setOpen('terminal', false)} position={props.position} title="Terminal">
+            <div className="bg-neutral-950 w-2xl p-5 h-96"></div>
+        </Window>);
 }
 
 export default TerminalProgram;

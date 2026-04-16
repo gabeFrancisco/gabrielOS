@@ -22,9 +22,9 @@ function Desktop() {
     { id: "resume", x: 50, y: 60 },
     { id: "files", x: 150, y: 100 },
     { id: "web", x: 150, y: 100 },
-    { id: "terminal", x: 150, y: 100 },
+    { id: "terminal", x: 120, y: 50 },
     { id: "invaders", x: 150, y: 100 },
-    { id: "about", x: 50, y: 100 }
+    { id: "about", x: 150, y: 100 }
   ]);
 
   function handleDragEnd(event: DragEndEvent) {
