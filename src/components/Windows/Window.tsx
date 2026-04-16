@@ -44,7 +44,8 @@ function Window({ id, title, children, position, onClose }: WindowProps) {
           display: 'flex',
           justifyContent: 'space-between',
           fontWeight: 'bold',
-          userSelect: 'none'
+          userSelect: 'none',
+          touchAction: 'none'
         }}
       >
 

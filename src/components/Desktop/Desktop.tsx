@@ -1,4 +1,4 @@
-import { DndContext, type DragEndEvent } from "@dnd-kit/core";
+import { DndContext, PointerSensor, TouchSensor, useSensor, useSensors, type DragEndEvent } from "@dnd-kit/core";
 // import MenuBar from "../MainToolbar/MenuBar";
 import Icon from "./Icon";
 import DroppableZone from "../Droppable/DroppableZone";
@@ -24,7 +24,7 @@ function Desktop() {
     { id: "web", x: 150, y: 100 },
     { id: "terminal", x: 120, y: 50 },
     { id: "invaders", x: 150, y: 100 },
-    { id: "about", x: 150, y: 100 }
+    { id: "about", x: 150, y: 20 }
   ]);
 
   function handleDragEnd(event: DragEndEvent) {
@@ -45,9 +45,23 @@ function Desktop() {
       })
     );
   }
+
+  const sensors = useSensors(
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        distance: 5,
+      },
+    }),
+    useSensor(TouchSensor, {
+      activationConstraint: {
+        delay: 200,
+        tolerance: 8,
+      },
+    })
+  );
   return (
 
-    <DndContext autoScroll={false} onDragEnd={handleDragEnd} modifiers={[restrictToWindowEdges]}>
+    <DndContext sensors={sensors} autoScroll={false} onDragEnd={handleDragEnd} modifiers={[restrictToWindowEdges]}>
       <div className="flex-1 min-h-0 overflow-hidden w-full">
         <DroppableZone>
 
