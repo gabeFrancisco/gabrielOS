@@ -25,7 +25,7 @@ function Window({ id, title, children, position, onClose }: WindowProps) {
     zIndex: transform ? 1000 : 1,
 
     // ✅ Define um tamanho máximo para a janela não vazar
-    maxWidth: '600px',
+    maxWidth: '90vw',
     maxHeight: '90vh',
     display: 'flex',
     flexDirection: 'column',
@@ -63,7 +63,7 @@ function Window({ id, title, children, position, onClose }: WindowProps) {
             </div>
           </div>
         </div>
-        <div className="flex-1 min-h-0 overflow-y-auto bg-gray-300 text-gray-800 p-1">
+        <div className="flex-1 min-h-0 max-h-screen w-full overflow-y-auto bg-gray-300 text-gray-800 p-1">
           {children}
         </div>
       </div>
