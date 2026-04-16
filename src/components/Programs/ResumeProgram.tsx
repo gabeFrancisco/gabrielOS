@@ -8,7 +8,10 @@ interface Props {
 function ResumeProgram(props: Props) {
     const store = useSystemStore();
     return (<Window onClose={() => store.setOpen("resume", false)} id="resume" title="Resume" position={props.position}>
-        <div className="overflow-y-scroll h-96 rounded p-3">
+        <div style={{
+            border: '2px outset #ccc ',
+            boxShadow: '1px 1px 0 0 #333',
+        }} className="overflow-y-scroll bg-white h-96 rounded p-3">
             <div>
                 <p><b>=== GABRIEL DA SILVA FRANCISCO ===<br /></b>Analista de Suporte<br />Telefone: (51) 99867-3148 |
                     Email: brielsfrancisco@gmail.com<br /></p>
@@ -40,12 +43,6 @@ function ResumeProgram(props: Props) {
                     intermedi&#225;rio/avan&#231;ado<br /></p>
                 <p>============================================================<br />STATUS: ONLINE<br />&#218;LTIMA
                     ATUALIZA&#199;&#195;O: 2026</p>
-
-            </div>
-        </div>
-        <div>
-            <div>
-                <p>============================================================</p>
 
             </div>
         </div>
