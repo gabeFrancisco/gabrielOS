@@ -21,7 +21,7 @@ function Desktop() {
     { id: 'programs', x: 50, y: 50 },
     { id: "resume", x: 50, y: 60 },
     { id: "files", x: 150, y: 100 },
-    { id: "web", x: 150, y: 100 },
+    { id: "web", x: 30, y: 30 },
     { id: "terminal", x: 120, y: 50 },
     { id: "invaders", x: 150, y: 100 },
     { id: "about", x: 150, y: 20 }

@@ -52,12 +52,12 @@ function Window({ id, title, children, position, onClose }: WindowProps) {
         <div className="border-gray-200 h-full w-full flex flex-row justify-between font-bold bg-blue-900 text-white pl-1 pr-0.5 text-sm py-0.5">
           {title}
           <div className="flex flex-row">
-            <div style={{ border: 'outset 1px' }} className="bg-gray-200 text-black hover:bg-gray-400 px-1 cursor-poi nter">
+            {/* <div style={{ border: 'outset 1px' }} className="bg-gray-200 text-black hover:bg-gray-400 px-1 cursor-poi nter">
               _
             </div>
             <div style={{ border: 'outset 1px' }} className="bg-gray-200 text-black hover:bg-gray-400 px-1 ml-0.5 cursor-pointer font-bold">
               ◻
-            </div>
+            </div> */}
             <div style={{ border: 'outset 1px' }} onPointerDown={(e) => e.stopPropagation()} onClick={onClose} className="bg-gray-200 text-black hover:bg-gray-400 px-1 ml-0.5 cursor-pointer">
               X
             </div>

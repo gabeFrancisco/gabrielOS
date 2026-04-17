@@ -45,7 +45,7 @@ function AboutProgram(props: Props) {
                 <p>Memory: 256 MB  |  Available: 211 MB</p>
                 <hr className="my-2 border-neutral-400" />
                 <p>Storage: 71 GB  |  Used: 5.7 GB</p>
-                <button className="btn mt-2 w-full text-center">Ok!</button>
+                <button onClick={() => store.setOpen("about", false)} className="btn mt-2 w-full text-center">Ok!</button>
             </div>
         </Window >);
 }
